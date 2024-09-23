@@ -1,0 +1,218 @@
+@charset "UTF-8";
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+@font-face {
+    font-family: 'idroid';
+    src: url('pacote-projeto-d010/fontes/idroid.otf');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/*
+#c5ebd6
+#83e1ad
+#3ddc84
+#2fa866
+#1a5c37
+#063d1e
+*/
+
+:root {
+    /*VARIÁVEL PARA PALETA DE CORES EM CSS*/
+    --cor01: #c5ebd6;
+    --cor02: #83e1ad;
+    --cor03: #3ddc84;
+    --cor04: #2fa866;
+    --cor05: #1a5c37;
+    --cor06: #063d1e;
+
+    --fonte-padrao: Arial, Verdana, Helvetica, sans-serif;
+    --fonte-destaque: 'Bebas Neue', cursive;
+    --fonte-android: 'idroid', cursive;
+     /*Nessas configurações, se mudar alguma cor, fonte ou outra coisa; todas as declarações que tiverem estas formatações também mudarão.*/
+}
+
+/*CONFIGURAÇÕES GLOBAIS*/
+* {  /* > Seleciona todos os elementos html*/
+    margin: 0px;
+    padding: 0px;
+}
+
+body {
+    background-color: var(--cor01);
+    font-family: var(--fonte-padrao);
+}
+
+a.externo:after {
+    content: '\00A0\1F517';  /*Emoji*/
+}
+
+/*CABEÇALHO*/
+header {
+    background-image: linear-gradient(to bottom, var(--cor03), var(--cor06));
+    min-height: 150px;
+    font-family: var(--fonte-padrao);
+    text-align: center;
+    font-weight: normal;
+    margin: -22px;
+    padding-top: 40px
+}
+
+header > h1 {
+    color: white;
+    font-family: var(--fonte-destaque);
+    font-weight: normal;
+    font-style: normal;
+    font-size: 3em;
+    margin-bottom: 20px;
+    padding-top: 20px;
+    text-shadow: 2px 2px 0px rgba(0, 0, 0, 0.39);
+  }
+
+header > p {
+    color: white;
+    font-family: var(--fonte-padrao);
+    font-size: 1.1em;
+    max-width: 600px;
+    padding-right: 10px;
+    padding-left: 10px;
+    margin: auto;
+    margin-bottom: 30px;
+    text-shadow: 2px 2px 0px rgba(0, 0, 0, 0.452);
+}
+ 
+/*MENUS*/
+nav {
+    background-color: var(--cor05);
+    padding: 10px;
+    margin-top: 20px;
+    box-shadow: 0px 7px 7px rgba(0, 0, 0, 0.192);
+}
+
+nav > a {
+    color: var(--cor01);
+    padding: 10px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    transition-duration: 0.5s;  /*Quando for passado o mouse por cima, ele vai mostrar uma transição*/
+}
+
+nav > a:hover {
+    background-color: var(--cor03);
+    color: var(--cor05);
+}
+
+/*CONTEÚDO PRINCIPAL*/
+main {
+    background-color: white;
+    min-width: 280px;
+    max-width: 1000px;
+    margin: auto;
+    margin-bottom: 30px;
+    margin-top: 0px;
+    padding: 20px;
+    box-shadow: 0px 0px 10px rgba(170, 148, 148, 0.459);
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+main h1 {   /*Quando colocado uma tag e logo depois outra sem o sinal '>' no meio, significa que essa tag está dentro  de outra sem importar o nível*/
+    color: var(--cor05);
+    font-family: var(--fonte-android);
+    font-size: 1.8em;
+}
+
+main h2 {
+    color: var(--cor05);
+    font-family: var(--fonte-android);
+    background-image: linear-gradient(to right, #c5ebd6, transparent);
+}
+
+main p {
+    text-indent: 30px;
+    margin: 15px 0px;
+    text-align: justify;
+}
+
+main p a {
+    background-color: var(--cor03);
+    color: var(--cor06);
+    text-decoration: none;
+}
+
+main img {
+    width: 100%;  /*A imagem se adapta ao tamanho da tela*/    
+}
+
+main img.pequena {
+    max-width: 350px;
+    display: block;     /*Transforma o elemento indicado em um bloco, que: não possui nada dos lados; ocupa 100% do espaço do navegador, etc.*/
+    margin: auto;
+}
+
+main strong {
+    color: var(--cor05);
+    font-weight: bold;
+}
+/*ABAIXO ESTÁ O MACETE PARA TORNAR UM VÍDEO RESPONSIVO*/
+div.video {
+    background-color: var(--cor05);
+    margin: 0px -20px 30px -20px;
+    padding: 20px;
+    padding-bottom: 59%;    /*Laterais pretas dentro do video*/
+    position: relative;
+}
+
+div.video > iframe {
+    position: absolute;
+    top: 5%;        /*Distância do topo*/
+    left: 5%;       /*Distância da lateral esquerda*/
+    width: 90%;     /*Largura do video dentro do background*/
+    height: 90%;    /*Altura do video dentro do background*/
+}
+
+/*CONTEÚDO RELATIVO AO PRINCIPAL*/
+aside {
+    background-color: var(--cor01);
+    padding: 10px;
+    border-radius: 10px; 
+    box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.363);
+}
+
+aside > ul {
+    list-style-type: '✔️\00A0\00A0';    /*00A0 > é o espaço*/
+    list-style-position: inside;       /*Posição da lista  / 'inside' é para dentro.*/
+    columns: 2;                        /*Colunas*/
+}
+
+aside > h3 {
+    background-color: var(--cor05);
+    color: white;
+    padding: 7px;
+    margin: -10px -10px 0px -10px;
+    border-radius: 10px 10px 0px 0px;
+}
+
+aside > h3 > strong {
+    color: white;
+}
+
+/*RODAPÉ*/
+footer {
+    background-color: var(--cor06);
+    color: white;
+    padding: 10px;
+    text-align: center;
+    font-size: 0.8em;
+}
+
+footer a {
+    color: white;
+    font-weight: bolder;
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+    color: var(--cor02);
+}
